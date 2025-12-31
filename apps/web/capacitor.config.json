@@ -1,0 +1,23 @@
+{
+  "appId": "com.khatabook.pro",
+  "appName": "Khatabook Pro",
+  "webDir": "out",
+  "server": {
+    "androidScheme": "https",
+    "allowedHosts": ["*"]
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0,
+      "androidScaleType": "CENTER_CROP"
+    },
+    "CapacitorSQLite": {
+      "iosDatabaseLocation": "Documents",
+      "androidDatabaseLocation": "default",
+      "encrypted": false
+    }
+  },
+  "android": {
+    "minVersion": 22
+  }
+}

@@ -1,0 +1,386 @@
+
+> frontend-nextjs@0.1.0 test
+> jest --no-coverage
+
+FAIL src/components/__tests__/Input.test.tsx
+  ● Input Component › renders input field
+
+    A React Element from an older version of React was rendered. This is not supported. It can happen if:
+    - Multiple copies of the "react" package is used.
+    - A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+    - A compiler tries to "inline" JSX instead of using the runtime.
+
+       5 | describe('Input Component', () => {
+       6 |   it('renders input field', () => {
+    >  7 |     render(<Input placeholder="Enter text" />)
+         |           ^
+       8 |     const input = screen.getByPlaceholderText('Enter text')
+       9 |     expect(input).toBeInTheDocument()
+      10 |   })
+
+      at throwOnInvalidObjectTypeImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:6095:15)
+      at throwOnInvalidObjectType (../../node_modules/react-dom/cjs/react-dom-client.development.js:6113:11)
+      at reconcileChildFibersImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:7058:11)
+      at ../../node_modules/react-dom/cjs/react-dom-client.development.js:7098:33
+      at reconcileChildren (../../node_modules/react-dom/cjs/react-dom-client.development.js:9702:13)
+      at beginWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:11899:15)
+      at runWithFiberInDEV (../../node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at performUnitOfWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:17641:22)
+      at workLoopSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17469:41)
+      at renderRootSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17450:11)
+      at performWorkOnRoot (../../node_modules/react-dom/cjs/react-dom-client.development.js:16583:35)
+      at performWorkOnRootViaSchedulerTask (../../node_modules/react-dom/cjs/react-dom-client.development.js:18957:7)
+      at flushActQueue (../../node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (../../node_modules/react/cjs/react.development.js:884:10)
+      at ../../node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (../../node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (../../node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (src/components/__tests__/Input.test.tsx:7:11)
+
+  ● Input Component › handles text input
+
+    A React Element from an older version of React was rendered. This is not supported. It can happen if:
+    - Multiple copies of the "react" package is used.
+    - A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+    - A compiler tries to "inline" JSX instead of using the runtime.
+
+      11 |
+      12 |   it('handles text input', async () => {
+    > 13 |     const { container } = render(<Input />)
+         |                                 ^
+      14 |     const input = container.querySelector('input') as HTMLInputElement
+      15 |     
+      16 |     await userEvent.type(input, 'test input')
+
+      at throwOnInvalidObjectTypeImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:6095:15)
+      at throwOnInvalidObjectType (../../node_modules/react-dom/cjs/react-dom-client.development.js:6113:11)
+      at reconcileChildFibersImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:7058:11)
+      at ../../node_modules/react-dom/cjs/react-dom-client.development.js:7098:33
+      at reconcileChildren (../../node_modules/react-dom/cjs/react-dom-client.development.js:9702:13)
+      at beginWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:11899:15)
+      at runWithFiberInDEV (../../node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at performUnitOfWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:17641:22)
+      at workLoopSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17469:41)
+      at renderRootSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17450:11)
+      at performWorkOnRoot (../../node_modules/react-dom/cjs/react-dom-client.development.js:16583:35)
+      at performWorkOnRootViaSchedulerTask (../../node_modules/react-dom/cjs/react-dom-client.development.js:18957:7)
+      at flushActQueue (../../node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (../../node_modules/react/cjs/react.development.js:884:10)
+      at ../../node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (../../node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (../../node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (src/components/__tests__/Input.test.tsx:13:33)
+
+  ● Input Component › supports disabled state
+
+    A React Element from an older version of React was rendered. This is not supported. It can happen if:
+    - Multiple copies of the "react" package is used.
+    - A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+    - A compiler tries to "inline" JSX instead of using the runtime.
+
+      19 |
+      20 |   it('supports disabled state', () => {
+    > 21 |     render(<Input disabled placeholder="Disabled input" />)
+         |           ^
+      22 |     const input = screen.getByPlaceholderText('Disabled input')
+      23 |     expect(input).toBeDisabled()
+      24 |   })
+
+      at throwOnInvalidObjectTypeImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:6095:15)
+      at throwOnInvalidObjectType (../../node_modules/react-dom/cjs/react-dom-client.development.js:6113:11)
+      at reconcileChildFibersImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:7058:11)
+      at ../../node_modules/react-dom/cjs/react-dom-client.development.js:7098:33
+      at reconcileChildren (../../node_modules/react-dom/cjs/react-dom-client.development.js:9702:13)
+      at beginWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:11899:15)
+      at runWithFiberInDEV (../../node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at performUnitOfWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:17641:22)
+      at workLoopSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17469:41)
+      at renderRootSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17450:11)
+      at performWorkOnRoot (../../node_modules/react-dom/cjs/react-dom-client.development.js:16583:35)
+      at performWorkOnRootViaSchedulerTask (../../node_modules/react-dom/cjs/react-dom-client.development.js:18957:7)
+      at flushActQueue (../../node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (../../node_modules/react/cjs/react.development.js:884:10)
+      at ../../node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (../../node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (../../node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (src/components/__tests__/Input.test.tsx:21:11)
+
+  ● Input Component › handles change events
+
+    A React Element from an older version of React was rendered. This is not supported. It can happen if:
+    - Multiple copies of the "react" package is used.
+    - A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+    - A compiler tries to "inline" JSX instead of using the runtime.
+
+      26 |   it('handles change events', async () => {
+      27 |     const handleChange = jest.fn()
+    > 28 |     const { container } = render(<Input onChange={handleChange} />)
+         |                                 ^
+      29 |     const input = container.querySelector('input') as HTMLInputElement
+      30 |     
+      31 |     await userEvent.type(input, 'a')
+
+      at throwOnInvalidObjectTypeImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:6095:15)
+      at throwOnInvalidObjectType (../../node_modules/react-dom/cjs/react-dom-client.development.js:6113:11)
+      at reconcileChildFibersImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:7058:11)
+      at ../../node_modules/react-dom/cjs/react-dom-client.development.js:7098:33
+      at reconcileChildren (../../node_modules/react-dom/cjs/react-dom-client.development.js:9702:13)
+      at beginWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:11899:15)
+      at runWithFiberInDEV (../../node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at performUnitOfWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:17641:22)
+      at workLoopSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17469:41)
+      at renderRootSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17450:11)
+      at performWorkOnRoot (../../node_modules/react-dom/cjs/react-dom-client.development.js:16583:35)
+      at performWorkOnRootViaSchedulerTask (../../node_modules/react-dom/cjs/react-dom-client.development.js:18957:7)
+      at flushActQueue (../../node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (../../node_modules/react/cjs/react.development.js:884:10)
+      at ../../node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (../../node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (../../node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (src/components/__tests__/Input.test.tsx:28:33)
+
+FAIL src/components/__tests__/Button.test.tsx
+  ● Button Component › renders button with text
+
+    A React Element from an older version of React was rendered. This is not supported. It can happen if:
+    - Multiple copies of the "react" package is used.
+    - A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+    - A compiler tries to "inline" JSX instead of using the runtime.
+
+       5 | describe('Button Component', () => {
+       6 |   it('renders button with text', () => {
+    >  7 |     render(<Button>Click me</Button>)
+         |           ^
+       8 |     const button = screen.getByRole('button', { name: /click me/i })
+       9 |     expect(button).toBeInTheDocument()
+      10 |   })
+
+      at throwOnInvalidObjectTypeImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:6095:15)
+      at throwOnInvalidObjectType (../../node_modules/react-dom/cjs/react-dom-client.development.js:6113:11)
+      at reconcileChildFibersImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:7058:11)
+      at ../../node_modules/react-dom/cjs/react-dom-client.development.js:7098:33
+      at reconcileChildren (../../node_modules/react-dom/cjs/react-dom-client.development.js:9702:13)
+      at beginWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:11899:15)
+      at runWithFiberInDEV (../../node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at performUnitOfWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:17641:22)
+      at workLoopSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17469:41)
+      at renderRootSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17450:11)
+      at performWorkOnRoot (../../node_modules/react-dom/cjs/react-dom-client.development.js:16583:35)
+      at performWorkOnRootViaSchedulerTask (../../node_modules/react-dom/cjs/react-dom-client.development.js:18957:7)
+      at flushActQueue (../../node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (../../node_modules/react/cjs/react.development.js:884:10)
+      at ../../node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (../../node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (../../node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (src/components/__tests__/Button.test.tsx:7:11)
+
+  ● Button Component › handles click events
+
+    A React Element from an older version of React was rendered. This is not supported. It can happen if:
+    - Multiple copies of the "react" package is used.
+    - A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+    - A compiler tries to "inline" JSX instead of using the runtime.
+
+      12 |   it('handles click events', async () => {
+      13 |     const handleClick = jest.fn()
+    > 14 |     render(<Button onClick={handleClick}>Click me</Button>)
+         |           ^
+      15 |     const button = screen.getByRole('button', { name: /click me/i })
+      16 |     
+      17 |     await userEvent.click(button)
+
+      at throwOnInvalidObjectTypeImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:6095:15)
+      at throwOnInvalidObjectType (../../node_modules/react-dom/cjs/react-dom-client.development.js:6113:11)
+      at reconcileChildFibersImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:7058:11)
+      at ../../node_modules/react-dom/cjs/react-dom-client.development.js:7098:33
+      at reconcileChildren (../../node_modules/react-dom/cjs/react-dom-client.development.js:9702:13)
+      at beginWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:11899:15)
+      at runWithFiberInDEV (../../node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at performUnitOfWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:17641:22)
+      at workLoopSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17469:41)
+      at renderRootSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17450:11)
+      at performWorkOnRoot (../../node_modules/react-dom/cjs/react-dom-client.development.js:16583:35)
+      at performWorkOnRootViaSchedulerTask (../../node_modules/react-dom/cjs/react-dom-client.development.js:18957:7)
+      at flushActQueue (../../node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (../../node_modules/react/cjs/react.development.js:884:10)
+      at ../../node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (../../node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (../../node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (src/components/__tests__/Button.test.tsx:14:11)
+
+  ● Button Component › supports disabled state
+
+    A React Element from an older version of React was rendered. This is not supported. It can happen if:
+    - Multiple copies of the "react" package is used.
+    - A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+    - A compiler tries to "inline" JSX instead of using the runtime.
+
+      20 |
+      21 |   it('supports disabled state', () => {
+    > 22 |     render(<Button disabled>Disabled Button</Button>)
+         |           ^
+      23 |     const button = screen.getByRole('button', { name: /disabled button/i })
+      24 |     expect(button).toBeDisabled()
+      25 |   })
+
+      at throwOnInvalidObjectTypeImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:6095:15)
+      at throwOnInvalidObjectType (../../node_modules/react-dom/cjs/react-dom-client.development.js:6113:11)
+      at reconcileChildFibersImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:7058:11)
+      at ../../node_modules/react-dom/cjs/react-dom-client.development.js:7098:33
+      at reconcileChildren (../../node_modules/react-dom/cjs/react-dom-client.development.js:9702:13)
+      at beginWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:11899:15)
+      at runWithFiberInDEV (../../node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at performUnitOfWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:17641:22)
+      at workLoopSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17469:41)
+      at renderRootSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17450:11)
+      at performWorkOnRoot (../../node_modules/react-dom/cjs/react-dom-client.development.js:16583:35)
+      at performWorkOnRootViaSchedulerTask (../../node_modules/react-dom/cjs/react-dom-client.development.js:18957:7)
+      at flushActQueue (../../node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (../../node_modules/react/cjs/react.development.js:884:10)
+      at ../../node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (../../node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (../../node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (src/components/__tests__/Button.test.tsx:22:11)
+
+  ● Button Component › applies variant styles
+
+    A React Element from an older version of React was rendered. This is not supported. It can happen if:
+    - Multiple copies of the "react" package is used.
+    - A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+    - A compiler tries to "inline" JSX instead of using the runtime.
+
+      26 |
+      27 |   it('applies variant styles', () => {
+    > 28 |     render(<Button variant="outline">Outlined</Button>)
+         |           ^
+      29 |     const button = screen.getByRole('button', { name: /outlined/i })
+      30 |     expect(button).toBeInTheDocument()
+      31 |   })
+
+      at throwOnInvalidObjectTypeImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:6095:15)
+      at throwOnInvalidObjectType (../../node_modules/react-dom/cjs/react-dom-client.development.js:6113:11)
+      at reconcileChildFibersImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:7058:11)
+      at ../../node_modules/react-dom/cjs/react-dom-client.development.js:7098:33
+      at reconcileChildren (../../node_modules/react-dom/cjs/react-dom-client.development.js:9702:13)
+      at beginWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:11899:15)
+      at runWithFiberInDEV (../../node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at performUnitOfWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:17641:22)
+      at workLoopSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17469:41)
+      at renderRootSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17450:11)
+      at performWorkOnRoot (../../node_modules/react-dom/cjs/react-dom-client.development.js:16583:35)
+      at performWorkOnRootViaSchedulerTask (../../node_modules/react-dom/cjs/react-dom-client.development.js:18957:7)
+      at flushActQueue (../../node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (../../node_modules/react/cjs/react.development.js:884:10)
+      at ../../node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (../../node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (../../node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (src/components/__tests__/Button.test.tsx:28:11)
+
+FAIL src/components/__tests__/Card.test.tsx
+  ● Card Component › renders card with content
+
+    A React Element from an older version of React was rendered. This is not supported. It can happen if:
+    - Multiple copies of the "react" package is used.
+    - A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+    - A compiler tries to "inline" JSX instead of using the runtime.
+
+      4 | describe('Card Component', () => {
+      5 |   it('renders card with content', () => {
+    > 6 |     render(
+        |           ^
+      7 |       <Card>
+      8 |         <CardContent>Test Content</CardContent>
+      9 |       </Card>
+
+      at throwOnInvalidObjectTypeImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:6095:15)
+      at throwOnInvalidObjectType (../../node_modules/react-dom/cjs/react-dom-client.development.js:6113:11)
+      at reconcileChildFibersImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:7058:11)
+      at ../../node_modules/react-dom/cjs/react-dom-client.development.js:7098:33
+      at reconcileChildren (../../node_modules/react-dom/cjs/react-dom-client.development.js:9702:13)
+      at beginWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:11899:15)
+      at runWithFiberInDEV (../../node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at performUnitOfWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:17641:22)
+      at workLoopSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17469:41)
+      at renderRootSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17450:11)
+      at performWorkOnRoot (../../node_modules/react-dom/cjs/react-dom-client.development.js:16583:35)
+      at performWorkOnRootViaSchedulerTask (../../node_modules/react-dom/cjs/react-dom-client.development.js:18957:7)
+      at flushActQueue (../../node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (../../node_modules/react/cjs/react.development.js:884:10)
+      at ../../node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (../../node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (../../node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (src/components/__tests__/Card.test.tsx:6:11)
+
+  ● Card Component › renders card header and title
+
+    A React Element from an older version of React was rendered. This is not supported. It can happen if:
+    - Multiple copies of the "react" package is used.
+    - A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+    - A compiler tries to "inline" JSX instead of using the runtime.
+
+      13 |
+      14 |   it('renders card header and title', () => {
+    > 15 |     render(
+         |           ^
+      16 |       <Card>
+      17 |         <CardHeader>
+      18 |           <CardTitle>Card Title</CardTitle>
+
+      at throwOnInvalidObjectTypeImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:6095:15)
+      at throwOnInvalidObjectType (../../node_modules/react-dom/cjs/react-dom-client.development.js:6113:11)
+      at reconcileChildFibersImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:7058:11)
+      at ../../node_modules/react-dom/cjs/react-dom-client.development.js:7098:33
+      at reconcileChildren (../../node_modules/react-dom/cjs/react-dom-client.development.js:9702:13)
+      at beginWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:11899:15)
+      at runWithFiberInDEV (../../node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at performUnitOfWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:17641:22)
+      at workLoopSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17469:41)
+      at renderRootSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17450:11)
+      at performWorkOnRoot (../../node_modules/react-dom/cjs/react-dom-client.development.js:16583:35)
+      at performWorkOnRootViaSchedulerTask (../../node_modules/react-dom/cjs/react-dom-client.development.js:18957:7)
+      at flushActQueue (../../node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (../../node_modules/react/cjs/react.development.js:884:10)
+      at ../../node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (../../node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (../../node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (src/components/__tests__/Card.test.tsx:15:11)
+
+  ● Card Component › applies custom className
+
+    A React Element from an older version of React was rendered. This is not supported. It can happen if:
+    - Multiple copies of the "react" package is used.
+    - A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+    - A compiler tries to "inline" JSX instead of using the runtime.
+
+      26 |
+      27 |   it('applies custom className', () => {
+    > 28 |     const { container } = render(
+         |                                 ^
+      29 |       <Card className="custom-class">
+      30 |         <CardContent>Test</CardContent>
+      31 |       </Card>
+
+      at throwOnInvalidObjectTypeImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:6095:15)
+      at throwOnInvalidObjectType (../../node_modules/react-dom/cjs/react-dom-client.development.js:6113:11)
+      at reconcileChildFibersImpl (../../node_modules/react-dom/cjs/react-dom-client.development.js:7058:11)
+      at ../../node_modules/react-dom/cjs/react-dom-client.development.js:7098:33
+      at reconcileChildren (../../node_modules/react-dom/cjs/react-dom-client.development.js:9702:13)
+      at beginWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:11899:15)
+      at runWithFiberInDEV (../../node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at performUnitOfWork (../../node_modules/react-dom/cjs/react-dom-client.development.js:17641:22)
+      at workLoopSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17469:41)
+      at renderRootSync (../../node_modules/react-dom/cjs/react-dom-client.development.js:17450:11)
+      at performWorkOnRoot (../../node_modules/react-dom/cjs/react-dom-client.development.js:16583:35)
+      at performWorkOnRootViaSchedulerTask (../../node_modules/react-dom/cjs/react-dom-client.development.js:18957:7)
+      at flushActQueue (../../node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (../../node_modules/react/cjs/react.development.js:884:10)
+      at ../../node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (../../node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (../../node_modules/@testing-library/react/dist/pure.js:291:10)
+      at Object.<anonymous> (src/components/__tests__/Card.test.tsx:28:33)
+
+Test Suites: 3 failed, 3 total
+Tests:       11 failed, 11 total
+Snapshots:   0 total
+Time:        3.233 s
+Ran all test suites.
