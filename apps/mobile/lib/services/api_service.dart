@@ -17,9 +17,13 @@ class ApiService {
   String getApiBaseUrl() {
     const String apiUrl = String.fromEnvironment(
       'API_URL',
-      defaultValue: 'https://api.khatabook.com/api', // Default production URL
+      defaultValue: 'https://ledger-0bjq.onrender.com', // Base URL without /api
     );
-    return apiUrl;
+    // Ensure we handle both with and without /api
+    if (apiUrl.endsWith('/api')) {
+      return apiUrl;
+    }
+    return '$apiUrl/api';
   }
 
   void _initializeBaseUrl() {
@@ -177,3 +181,4 @@ class ApiService {
     return await _dio.put('/reminders/$id/status', queryParameters: {'status': status});
   }
 }
+ 
