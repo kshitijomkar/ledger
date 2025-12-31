@@ -21,14 +21,15 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.0'
           channel: 'stable'
           
       - name: Get dependencies
         run: cd apps/mobile && flutter pub get
         
       - name: Build APK
-        run: cd apps/mobile && flutter build apk --release --dart-define=API_URL=${{ secrets.RENDER_API_URL || 'https://api.khatabook.com/api' }}
+        run: |
+          cd apps/mobile
+          flutter build apk --release --dart-define=API_URL=${{ secrets.RENDER_API_URL }}
         
       - name: Upload APK
         uses: actions/upload-artifact@v3
